@@ -22,7 +22,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="amount">Amount</label>
-                                <input type="number" name="amount" id="amount" class="form-control" placeholder="e.g., 100" required>
+                                <input type="number" name="amount" id="amount" class="form-control" placeholder="e.g., 100" value="1" required disabled>
                             </div>
                             <div class="form-group">
                                 <label for="reference">Reference</label>
