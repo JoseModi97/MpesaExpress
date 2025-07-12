@@ -27,7 +27,13 @@ class Database
         try {
             $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
         } catch (PDOException $e) {
-            echo $e->getMessage();
+            $log_file = __DIR__ . '/../logs/db_errors.log';
+            if (!is_dir(__DIR__ . '/../logs')) {
+                mkdir(__DIR__ . '/../logs');
+            }
+            file_put_contents($log_file, $e->getMessage() . PHP_EOL, FILE_APPEND);
+            echo "Database connection error. Please check the logs for more details.";
+            exit;
         }
     }
 
